@@ -62,7 +62,7 @@ public class Gui {
 
     JPanel buttons = new JPanel(new GridLayout(3, 2, 8, 8));
     JButton btnAdicionar = new JButton("Adicionar");
-    JButton btnListar = new JButton("Listar");
+    JButton btnListar = new JButton("Atualizar Lista");
     JButton btnGet = new JButton("Buscar por posição");
     JButton btnAlterar = new JButton("Alterar por posição");
     JButton btnRemoverPrimeiro = new JButton("Remover primeiro");
@@ -132,6 +132,8 @@ public class Gui {
     });
 
     frame.setVisible(true);
+
+    controller.carregarPedidosSalvos();
     refreshList();
   }
 

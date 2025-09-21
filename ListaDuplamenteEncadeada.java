@@ -95,4 +95,19 @@ public class ListaDuplamenteEncadeada {
     }
     return cursor.getElemento();
   }
+
+  public Pedido[] getAllPedidos() {
+    if (cabeca == null) {
+      return new Pedido[0];
+    }
+    Pedido[] pedidos = new Pedido[tamanho];
+    No cursor = cabeca;
+    int pos = 0;
+    while (cursor != null) {
+      pedidos[pos] = cursor.getElemento();
+      cursor = cursor.getProximo();
+      pos++;
+    }
+    return pedidos;
+  }
 }
