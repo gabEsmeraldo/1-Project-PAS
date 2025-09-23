@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
 
+#Persistence
+*.csv
+
 # Log file
 *.log
 
