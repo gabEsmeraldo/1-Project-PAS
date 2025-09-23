@@ -15,13 +15,13 @@ public class PersistenceManager {
   }
 
   public void exportarParaCSV(Pedido[] pedidos) throws IOException {
-    if (pedidos == null || pedidos.length == 0) {
-      throw new IOException("Não há pedidos para exportar");
-    }
-
     String filename = "PedidosSalvos.csv";
 
-    try (FileWriter writer = new FileWriter(filename)) {
+    try (FileWriter writer = new FileWriter(filename, false)) {
+      if (pedidos == null || pedidos.length == 0) {
+        return;
+      }
+
       for (int i = 0; i < pedidos.length; i++) {
         Pedido pedido = pedidos[i];
         StringBuilder line = new StringBuilder();
